@@ -2,8 +2,8 @@ import { Image } from "../main";
 import { closeImage } from "./image";
 
 const uploadImagePopup = document.querySelector('.upload-image-popup__container')
-const cancelUploadImageButton = document.querySelector('.cancel')
-const uploadImageButton = document.querySelector('.upload')
+const cancelUploadImageButton = document.querySelector('#cancel')
+const uploadImageButton = document.querySelector('#upload')
 const imageURLInput = document.querySelector<HTMLInputElement>('.upload-image-popup__input')!
 const imageContainer = document.querySelector('.image-container')
 const fileImageUploadInput = document.querySelector<HTMLInputElement>('#file-image-upload__input')!

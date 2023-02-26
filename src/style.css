@@ -156,6 +156,8 @@ img:hover {
   font-size: 1.2rem;
 
   padding: 1rem;
+
+  width: 24rem;
 }
 
 .display {
@@ -168,8 +170,12 @@ label {
   color: white;
 }
 
-.file-input-container__input {
-  display: flex;
-  flex-direction: column;
+#file-image-upload__input-file {
   color: white;
+  width: 16rem;
+}
+
+.cancel,
+.upload {
+  width: 12rem;
 }

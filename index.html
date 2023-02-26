@@ -15,17 +15,18 @@
       <h1 class="title" id="title">ZePhotos</h1>
       <button class="upload-image" id="upload-image">Upload Image</button>
     </header>
-    <div id="upload-popup" class="upload-image-popup__container display">
+    <div id="upload-popup" class="upload-image-popup__container">
       <div class="upload-image-popup">
         <input type="text" class="upload-image-popup__input" placeholder="paste the image URL here..." />
         <div class="file-input-container">
           <p>or....</p>
           <input type="file" name="Image file uploader" class="file-input-container__input"
-            id="file-image-upload__input">
+            id="file-image-upload__input-file">
+          <button class="file-input-container__input" id="file-input-container__input-remove-file">Remove file</button>
         </div>
         <div>
-          <button class="upload">Upload</button>
-          <button class="cancel">Cancel</button>
+          <button id="upload" class="upload">Upload</button>
+          <button id="cancel" class="cancel">Cancel</button>
         </div>
       </div>
     </div>
