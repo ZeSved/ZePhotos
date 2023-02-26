@@ -23,12 +23,12 @@ body {
   gap: 2rem;
 }
 
-.wrapper > header,
-.wrapper > footer {
+.wrapper>header,
+.wrapper>footer {
   padding-inline: 5%;
 }
 
-.wrapper > main {
+.wrapper>main {
   margin-inline: 5%;
 }
 
@@ -41,7 +41,8 @@ header {
   padding-block: 0.5rem;
 }
 
-button {
+button,
+::-webkit-file-upload-button {
   background-color: white;
   outline: none;
   width: 8rem;
@@ -53,7 +54,8 @@ button {
   padding: 1rem 0.5rem;
 }
 
-button:hover {
+button:hover,
+::-webkit-file-upload-button:hover {
   background-color: #131313;
   color: white;
   cursor: pointer;
@@ -158,4 +160,16 @@ img:hover {
 
 .display {
   display: none;
+}
+
+p,
+label {
+  text-align: center;
+  color: white;
+}
+
+.file-input-container__input {
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
