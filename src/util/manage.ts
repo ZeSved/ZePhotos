@@ -6,10 +6,13 @@ const cancelUploadImageButton = document.querySelector('#cancel')
 const uploadImageButton = document.querySelector('#upload')
 const imageURLInput = document.querySelector<HTMLInputElement>('.upload-image-popup__input')!
 const imageContainer = document.querySelector('.image-container')
-const fileImageUploadInput = document.querySelector<HTMLInputElement>('#file-image-upload__input')!
+const fileImageUploadInput = document.querySelector<HTMLInputElement>('#file-image-upload__input-file')!
+const fileInputContainer__InputRemoveFile =
+  document.querySelector('#file-input-container__input-remove-file')
 
 cancelUploadImageButton?.addEventListener('click', cancelUploadImage)
 uploadImageButton?.addEventListener('click', uploadImage)
+fileInputContainer__InputRemoveFile?.addEventListener('click', clearFileValue)
 
 export function search(query: string, inputImages: Image[]) {
   closeImage()
@@ -19,6 +22,10 @@ export function search(query: string, inputImages: Image[]) {
 
 export function cancelUploadImage() {
   toggleDisplayOnuploadImagePopup()
+}
+
+export function clearFileValue() {
+  fileImageUploadInput.value = ''
 }
 
 export function confirmUploadImage() {
