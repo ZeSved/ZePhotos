@@ -1,112 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZePhotos</title>
+    <script defer type="module" src="/src/main.ts"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <!-- <script src="vendors/exif-js/exif-js"></script> -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZePhotos</title>
-  <script defer type="module" src="/src/main.ts"></script>
-  <link rel="stylesheet" href="./src/style.css" />
-  <!-- <script src="vendors/exif-js/exif-js"></script> -->
-</head>
-
-<body>
-  <div class="wrapper">
-    <header>
-      <h1 class="title" id="title">ZePhotos</h1>
-      <button class="upload-image" id="upload-image">Upload Image</button>
-    </header>
-    <div id="upload-popup" class="upload-image-popup__container display">
-      <div class=" upload-image-popup">
-        <input type="text" class="upload-image-popup__input" placeholder="paste the image URL here..." />
-        <!-- <div class="file-input-container">
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="title" id="title">ZePhotos</h1>
+        <button class="upload-image" id="upload-image">Upload Image</button>
+      </header>
+      <div id="upload-popup" class="upload-image-popup__container display">
+        <div class="upload-image-popup">
+          <input
+            type="text"
+            class="upload-image-popup__input"
+            placeholder="paste the image URL here..." />
+          <!-- <div class="file-input-container">
           <p>or....</p>
           <input type="file" name="Image file uploader" class="file-image-upload__input"
             id="file-image-upload__input-file">
           <button class="file-input-container__input" id="file-input-container__input-remove-file">Remove file</button>
         </div> -->
-        <div>
-          <button id="upload" class="upload">Upload</button>
-          <button id="cancel" class="cancel">Cancel</button>
+          <div>
+            <button id="upload" class="upload">Upload</button>
+            <button id="cancel" class="cancel">Cancel</button>
+          </div>
         </div>
       </div>
+      <main>
+        <input class="search-bar" id="search-bar" placeholder="search..." type="text" />
+
+        <div class="main-content-wrapper">
+          <div class="selected-image-view" id="selected-image-view">
+            <!-- <div class="selected-image-view__selected-image-wrapper"> -->
+            <img
+              class="selected-image-view__selected-image"
+              id="selected-image-view__selected-image"
+              src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
+              alt="" />
+            <!-- </div> -->
+            <h2 class="selected-image-view__file-name" id="selected-image-view__file-name">
+              Lorem, ipsum.
+            </h2>
+            <ul class="metadata-list">
+              <li>Shot on:</li>
+              <li>Country, city</li>
+              <li>Lorem.</li>
+              <li>Lorem.</li>
+              <li>Lorem.</li>
+            </ul>
+            <div class="selected-image-view__buttons">
+              <button id="selected-image-view__delete-image">Delete Image</button>
+              <button id="selected-image-view__download-image">Download Image</button>
+              <button id="selected-image-view__close-image">Close Image</button>
+            </div>
+          </div>
+
+          <div class="image-container image-selected" id="image-container">
+            <img
+              class="img"
+              src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
+              alt="" />
+            <img
+              class="img"
+              src="https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/4:3/pass/gettyimages-1146431497.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://cdn.corporate.walmart.com/dims4/WMT/f7a8313/2147483647/strip/true/crop/1920x1080+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a19c13e1ca65f193%2Fbusinessfornature-banner.png"
+              alt="" />
+            <img
+              class="img"
+              src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.pbs.org/wnet/nature/files/2019/07/Super-Hummingbirds-2-1280x675.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
+              alt="" />
+            <img
+              class="img"
+              src="https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/4:3/pass/gettyimages-1146431497.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://cdn.corporate.walmart.com/dims4/WMT/f7a8313/2147483647/strip/true/crop/1920x1080+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a19c13e1ca65f193%2Fbusinessfornature-banner.png"
+              alt="" />
+            <img
+              class="img"
+              src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.pbs.org/wnet/nature/files/2019/07/Super-Hummingbirds-2-1280x675.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
+              alt="" />
+            <img
+              class="img"
+              src="https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/4:3/pass/gettyimages-1146431497.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://cdn.corporate.walmart.com/dims4/WMT/f7a8313/2147483647/strip/true/crop/1920x1080+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a19c13e1ca65f193%2Fbusinessfornature-banner.png"
+              alt="" />
+            <img
+              class="img"
+              src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.pbs.org/wnet/nature/files/2019/07/Super-Hummingbirds-2-1280x675.jpg"
+              alt="" />
+            <img
+              class="img"
+              src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
+              alt="" />
+          </div>
+        </div>
+      </main>
     </div>
-    <main>
-      <input class="search-bar" id="search-bar" placeholder="search..." type="text" />
-
-      <div class="selected-image-view" id="selected-image-view">
-        <div class="selected-image-view__selected-image-wrapper">
-          <img class="selected-image-view__selected-image" id="selected-image-view__selected-image"
-            src="https://images.unsplash.com/photo-1420593248178-d88870618ca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80"
-            alt="">
-        </div>
-        <h2 class="selected-image-view__file-name" id="selected-image-view__file-name"></h2>
-        <ul class="metadata-list">
-          <li>Shot on: </li>
-          <li>Country, city</li>
-          <li>Lorem.</li>
-          <li>Lorem.</li>
-          <li>Lorem.</li>
-        </ul>
-        <div class="selected-image-view__buttons">
-          <button id="selected-image-view__delete-image">Delete Image</button>
-          <button id="selected-image-view__download-image">Download Image</button>
-          <button id="selected-image-view__close-image">Close Image</button>
-        </div>
-      </div>
-
-      <div class="image-container image-selected" id="image-container">
-        <img class="img"
-          src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
-          alt="" />
-        <img class="img"
-          src="https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/4:3/pass/gettyimages-1146431497.jpg"
-          alt="" />
-        <img class="img"
-          src="https://cdn.corporate.walmart.com/dims4/WMT/f7a8313/2147483647/strip/true/crop/1920x1080+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a19c13e1ca65f193%2Fbusinessfornature-banner.png"
-          alt="" />
-        <img class="img"
-          src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-          alt="" />
-        <img class="img" src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
-          alt="" />
-        <img class="img" src="https://www.pbs.org/wnet/nature/files/2019/07/Super-Hummingbirds-2-1280x675.jpg" alt="" />
-        <img class="img"
-          src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
-          alt="" />
-        <img class="img"
-          src="https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/4:3/pass/gettyimages-1146431497.jpg"
-          alt="" />
-        <img class="img"
-          src="https://cdn.corporate.walmart.com/dims4/WMT/f7a8313/2147483647/strip/true/crop/1920x1080+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a19c13e1ca65f193%2Fbusinessfornature-banner.png"
-          alt="" />
-        <img class="img"
-          src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-          alt="" />
-        <img class="img" src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
-          alt="" />
-        <img class="img" src="https://www.pbs.org/wnet/nature/files/2019/07/Super-Hummingbirds-2-1280x675.jpg" alt="" />
-        <img class="img"
-          src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
-          alt="" />
-        <img class="img"
-          src="https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/4:3/pass/gettyimages-1146431497.jpg"
-          alt="" />
-        <img class="img"
-          src="https://cdn.corporate.walmart.com/dims4/WMT/f7a8313/2147483647/strip/true/crop/1920x1080+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F7b%2F66%2F142c151b4cd3a19c13e1ca65f193%2Fbusinessfornature-banner.png"
-          alt="" />
-        <img class="img"
-          src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-          alt="" />
-        <img class="img" src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
-          alt="" />
-        <img class="img" src="https://www.pbs.org/wnet/nature/files/2019/07/Super-Hummingbirds-2-1280x675.jpg" alt="" />
-        <img class="img"
-          src="https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/state-of-nature-2020-subtopic/image_print"
-          alt="" />
-      </div>
-    </main>
-  </div>
-</body>
-
+  </body>
 </html>

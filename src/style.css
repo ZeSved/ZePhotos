@@ -23,12 +23,12 @@ body {
   gap: 2rem;
 }
 
-.wrapper>header,
-.wrapper>footer {
+.wrapper > header,
+.wrapper > footer {
   padding-inline: 5%;
 }
 
-.wrapper>main {
+.wrapper > main {
   margin-inline: 5%;
 }
 
@@ -41,24 +41,22 @@ header {
   padding-block: 0.5rem;
 }
 
-button,
-::-webkit-file-upload-button {
+button {
   background-color: white;
   outline: none;
-  width: 8rem;
   border-radius: 20px;
   font-size: 1rem;
   font-weight: 900;
   transition: all 0.3s;
   border: none;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
 }
 
 button:hover,
 ::-webkit-file-upload-button:hover {
   background-color: #131313;
   color: white;
-  cursor: pointer;
 }
 
 input[type='text'] {
@@ -85,26 +83,13 @@ input[type='text'] {
   color: white;
 }
 
-.image-container {
+.image-container,
+.image-selected {
   overflow-y: scroll;
 
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.image-container.image-selected {
-  overflow-y: scroll;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 ::-webkit-scrollbar {
@@ -192,29 +177,30 @@ label {
   width: 12rem;
 }
 
-.image-selected {
-  width: 60%;
-  float: right;
+.main-content-wrapper {
+  display: flex;
+  gap: 1rem;
+
+  margin-top: 1rem;
 }
 
-.image-selected>img {
+.image-selected {
+  flex: 1;
+
+  flex-basis: 300px;
+}
+
+.image-selected > img {
   height: 10rem;
 }
 
 .selected-image-view {
-  width: 40%;
-  height: min-content;
+  flex: 3;
   background-color: rgba(18, 18, 20, 0.5);
 
-  float: left;
-  margin-top: 2rem;
+  height: fit-content;
   padding: 1rem;
-
-  overflow-y: scroll;
-}
-
-.selected-image-view__selected-image-wrapper {
-  max-width: 40rem;
+  width: min-content;
 }
 
 .selected-image-view__selected-image {
@@ -229,16 +215,26 @@ label {
 
 .selected-image-view__buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
   padding-top: 1rem;
-}
-
-.selected-image-view__buttons>button {
-  width: 12.5rem;
-  border-radius: 1rem;
 }
 
 .metadata-list {
   list-style: none;
   color: rgb(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1250px) {
+  .main-content-wrapper {
+    flex-direction: column;
+  }
+
+  .selected-image-view {
+    width: 100%;
+  }
+
+  .selected-image-view__selected-image {
+    width: 100%;
+  }
 }
