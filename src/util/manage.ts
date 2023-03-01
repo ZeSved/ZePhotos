@@ -6,13 +6,9 @@ const cancelUploadImageButton = document.querySelector('#cancel')
 const uploadImageButton = document.querySelector('#upload')
 const imageURLInput = document.querySelector<HTMLInputElement>('.upload-image-popup__input')!
 const imageContainer = document.querySelector('.image-container')
-const fileImageUploadInput = document.querySelector<HTMLInputElement>('#file-image-upload__input-file')!
-const fileInputContainer__InputRemoveFile =
-  document.querySelector('#file-input-container__input-remove-file')
 
 cancelUploadImageButton?.addEventListener('click', cancelUploadImage)
 uploadImageButton?.addEventListener('click', uploadImage)
-fileInputContainer__InputRemoveFile?.addEventListener('click', clearFileValue)
 
 export function search(query: string, inputImages: Image[]) {
   closeImage()
@@ -24,10 +20,6 @@ export function cancelUploadImage() {
   toggleDisplayOnuploadImagePopup()
 }
 
-export function clearFileValue() {
-  fileImageUploadInput.value = ''
-}
-
 export function confirmUploadImage() {
   toggleDisplayOnuploadImagePopup()
 }
@@ -35,14 +27,19 @@ export function confirmUploadImage() {
 export function uploadImage() {
   const img = document.createElement('img')
 
-  if (fileImageUploadInput.value !== '' && imageURLInput.value !== '') {
-    alert('You may only upload one file at a time.')
+  if (imageURLInput.value == '') {
+    alert('Please provide a valid URL.')
     return
   }
 
-  imageURLInput.value == '' ? img.src = fileImageUploadInput.value : img.src = imageURLInput.value
+  if (!imageURLInput.value.startsWith('https') || !imageURLInput.value.startsWith('http')) {
+    alert('URL must start with https or http.')
+    return
+  }
 
+  img.src = imageURLInput.value
   img.id = JSON.stringify(Date.now())
+  img.className = 'img'
 
   imageContainer?.appendChild(img)
   toggleDisplayOnuploadImagePopup()
@@ -51,5 +48,23 @@ export function uploadImage() {
 function toggleDisplayOnuploadImagePopup() {
   uploadImagePopup?.classList.toggle('display')
   imageURLInput.value = ''
-  fileImageUploadInput.value = ''
 }
+
+// window.onload = getExif;
+
+// export function getExif() {
+//   var img1 = document.getElementById("img1");
+//   EXIF.getData(img1, function () {
+//     var make = EXIF.getTag(this, "Make");
+//     var model = EXIF.getTag(this, "Model");
+//     var makeAndModel = document.getElementById("makeAndModel");
+//     makeAndModel.innerHTML = `${make} ${model}`;
+//   });
+
+//   var img2 = document.getElementById("img2");
+//   EXIF.getData(img2, function () {
+//     var allMetaData = EXIF.getAllTags(this);
+//     var allMetaDataSpan = document.getElementById("allMetaDataSpan");
+//     allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+//   });
+// }

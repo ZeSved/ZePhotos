@@ -93,6 +93,18 @@ input[type='text'] {
   gap: 0.5rem;
 
   margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.image-container.image-selected {
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 ::-webkit-scrollbar {
@@ -108,9 +120,9 @@ input[type='text'] {
   border-radius: 50px;
 }
 
-img {
+img:not(.selected-image-view__selected-image) {
   flex-grow: 1;
-  height: 35rem;
+  height: 15rem;
   border-radius: 1rem;
 
   cursor: pointer;
@@ -120,7 +132,7 @@ img {
   position: relative;
 }
 
-img:hover {
+img:not(.selected-image-view__selected-image):hover {
   filter: blur(0.3rem);
 }
 
@@ -178,4 +190,55 @@ label {
 .cancel,
 .upload {
   width: 12rem;
+}
+
+.image-selected {
+  width: 60%;
+  float: right;
+}
+
+.image-selected>img {
+  height: 10rem;
+}
+
+.selected-image-view {
+  width: 40%;
+  height: min-content;
+  background-color: rgba(18, 18, 20, 0.5);
+
+  float: left;
+  margin-top: 2rem;
+  padding: 1rem;
+
+  overflow-y: scroll;
+}
+
+.selected-image-view__selected-image-wrapper {
+  max-width: 40rem;
+}
+
+.selected-image-view__selected-image {
+  width: 100%;
+}
+
+.selected-image-view__file-name {
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.selected-image-view__buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.selected-image-view__buttons>button {
+  width: 12.5rem;
+  border-radius: 1rem;
+}
+
+.metadata-list {
+  list-style: none;
+  color: rgb(255, 255, 255, 0.7);
 }
