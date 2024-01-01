@@ -4,7 +4,6 @@ import iconLogo from '@/public/ZePhotos.png'
 import s from './sidebar.module.css'
 import { ImageType } from '@/types/types'
 import NavItem from './nav-item'
-import { FaEye } from 'react-icons/fa'
 import { FaHeart } from 'react-icons/fa'
 
 export default function Sidebar() {
@@ -14,12 +13,6 @@ export default function Sidebar() {
 			href: '/liked',
 			content: [],
 			imgSrc: <FaHeart />,
-		},
-		{
-			name: 'Most viewed',
-			href: '/most_viewed',
-			content: [],
-			imgSrc: <FaEye />,
 		},
 	]
 
