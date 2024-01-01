@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { SidebarContent } from './page'
 
-export default function NavItem({ item }: { item: SidebarContent }, key: number) {
+export default function NavItem({ item }: { item: SidebarContent }) {
 	return (
-		<div key={key}>
+		<div>
 			<Link href={item.href}>
 				{item.imgSrc}
 				<p>{item.name}</p>

@@ -30,11 +30,8 @@ export default function Sidebar() {
 				<nav>
 					<ul>
 						{sidebarContent.map((item, i) => (
-							<li>
-								<NavItem
-									key={i}
-									item={item}
-								/>
+							<li key={i}>
+								<NavItem item={item} />
 							</li>
 						))}
 					</ul>
